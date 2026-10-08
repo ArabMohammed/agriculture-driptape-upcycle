@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agriculture-driptape-upcycle.mohammedarab-122002.workers.dev/sitemap.xml
