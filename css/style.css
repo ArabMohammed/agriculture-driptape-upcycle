@@ -263,6 +263,32 @@ h2 {
 }
 
 
+.weave-steps {
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    margin-top:25px;
+
+}
+
+
+.weave-steps img {
+
+    width:100%;
+    height:200px;
+    object-fit:cover;
+
+}
+
+
+.weave-steps figcaption {
+
+    color:#37474f;
+
+}
+
+
 .stats {
 
     display:grid;
@@ -501,6 +527,22 @@ figcaption {
 }
 
 
+.source-note {
+
+    font-size: 0.8rem;
+    color: #546e7a;
+    font-style: italic;
+    margin-top: 20px;
+
+}
+
+.source-note a {
+
+    color: #1b5e20;
+
+}
+
+
 .media-grid {
 
     display: grid;
@@ -712,6 +754,20 @@ footer {
 
     grid-template-columns:1fr;
     gap:40px;
+
+}
+
+
+.weave-steps {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.weave-steps img {
+
+    height:240px;
 
 }
 
