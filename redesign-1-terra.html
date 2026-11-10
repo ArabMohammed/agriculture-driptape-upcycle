@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReWeave — Terra (editorial)</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf6ef; --paper:#fffdf9; --ink:#2a2620; --muted:#8a7f70;
+  --clay:#b4663a; --olive:#5c6b3f; --forest:#33402a; --line:#e6ded0;
+  --maxw:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.1;letter-spacing:-.01em}
+a{color:var(--clay);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:auto;padding:0 28px}
+.eyebrow{font-family:"Inter";font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin:0 0 14px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(2rem,4vw,2.9rem);margin:0 0 8px}
+.lead{font-size:1.15rem;color:#4a4339;max-width:68ch}
+.src{font-size:.82rem;color:var(--muted);font-style:italic;max-width:80ch;margin-top:22px}
+.src a{color:var(--olive)}
+
+/* Nav */
+header{position:sticky;top:0;z-index:20;background:rgba(250,246,239,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:auto;padding:16px 28px}
+.brand{font-family:"Fraunces";font-size:1.5rem;font-weight:600;letter-spacing:-.02em}
+.brand span{color:var(--clay)}
+.navlinks{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:.9rem}
+.navlinks a{color:var(--ink)}
+.navlinks a:hover{color:var(--clay);text-decoration:none}
+.menu{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;padding:0;border:0;min-height:86vh;display:flex;align-items:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(42,38,32,.78) 0%,rgba(51,64,42,.55) 55%,rgba(51,64,42,.2) 100%),url("images/drip_tapes_usage_in_crops.webp") center/cover;z-index:0}
+.hero .wrap{position:relative;z-index:1;color:#fff}
+.hero .eyebrow{color:#e8c9ab}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:500;max-width:16ch;color:#fff;margin:0 0 22px}
+.hero p{font-size:1.2rem;max-width:56ch;color:#f1ece3}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:15px 30px;background:var(--clay);color:#fff;border-radius:2px;font-weight:600;font-size:.95rem}
+.btn:hover{background:#9d5730;text-decoration:none}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.5);margin-left:12px}
+
+/* Problem */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:46px 0 10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:30px 26px 30px 0;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{font-family:"Fraunces";display:block;font-size:2.6rem;font-weight:500;color:var(--forest);line-height:1}
+.stat p{margin:12px 0 0;font-size:.92rem;color:#5a5245}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.gallery figure{margin:0}
+.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+.gallery figcaption{font-size:.82rem;color:var(--muted);margin-top:8px}
+
+/* Solution approach */
+.approach{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin:44px 0}
+.approach figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.approach img{width:100%;aspect-ratio:3/2;object-fit:contain;background:#f1ece3;padding:10px}
+.approach .photo img{object-fit:cover;padding:0}
+.approach figcaption{padding:18px 22px;font-size:.92rem;color:#5a5245}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+.flow .c{padding:28px 24px;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--clay);border-radius:4px}
+.flow .c span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);font-weight:600}
+.flow .c h3{margin:10px 0 6px;font-size:1.25rem}
+.flow .c p{margin:0;font-size:.95rem}
+.why{margin-top:36px;padding:34px 38px;background:var(--forest);color:#f0efe6;border-radius:5px}
+.why h3{color:#fff;margin:0 0 18px}
+.why ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 30px}
+.why li{display:flex;gap:12px;align-items:flex-start;font-size:.98rem}
+.why svg{flex:0 0 20px;width:20px;height:20px;fill:#bcd49a;margin-top:3px}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:40px 0}
+.step .n{font-family:"Fraunces";font-size:2.4rem;color:var(--clay);line-height:1}
+.step h3{margin:8px 0 6px;font-size:1.2rem}
+.step p{margin:0;font-size:.92rem;color:#5a5245}
+.weave{margin-top:30px;padding:36px 40px;background:var(--paper);border:1px solid var(--line);border-radius:5px}
+.weave h3{margin:0 0 14px;font-size:1.5rem}
+.weave p{max-width:74ch;color:#4a4339}
+.wsteps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.wsteps img{aspect-ratio:1;object-fit:cover;border-radius:3px}
+.wsteps figcaption{font-size:.78rem;color:var(--muted);margin-top:7px}
+
+/* Timeline */
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:40px 0}
+.tl .e{padding:0 28px 0 0;position:relative}
+.tl .e::before{content:"";position:absolute;left:0;top:34px;right:0;height:2px;background:var(--line)}
+.tl .dot{position:relative;z-index:1;width:14px;height:14px;border-radius:50%;background:var(--clay);margin-bottom:22px}
+.tl .yr{font-family:"Fraunces";font-size:1.6rem;color:var(--forest)}
+.tl h3{margin:4px 0 6px;font-size:1.15rem}
+.tl p{margin:0;font-size:.92rem;color:#5a5245}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.pair .p{position:relative}
+.pair img{aspect-ratio:3/2;object-fit:cover;border-radius:4px}
+.pair .tag{position:absolute;left:12px;bottom:12px;background:rgba(42,38,32,.85);color:#fff;font-size:.78rem;padding:6px 12px;border-radius:3px}
+figcaption.cap{font-size:.85rem;color:var(--muted);margin-top:14px}
+
+/* Applications + perspectives cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;margin-top:38px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.card img{aspect-ratio:3/2;object-fit:cover}
+.card .body{padding:24px}
+.card h3{margin:0 0 8px;font-size:1.25rem}
+.card p{margin:0;font-size:.95rem;color:#5a5245}
+.pcard{padding:28px 26px;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--olive);border-radius:4px}
+.pcard h3{margin:0 0 8px;font-size:1.15rem}
+.pcard p{margin:0;font-size:.93rem;color:#5a5245}
+
+/* Impact */
+#impact{background:var(--forest);color:#eef0e6;border:0}
+#impact h2,#impact h3{color:#fff}
+#impact .eyebrow{color:#cfe0a8}
+.istats{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin:40px 0}
+.istat b{font-family:"Fraunces";font-size:3.2rem;color:#fff;display:block;line-height:1}
+.istat p{margin:10px 0 0;color:#cdd3bf;font-size:.95rem}
+.inote{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:34px 38px}
+.inote p{color:#e4e8d8;max-width:78ch}
+.inote strong{color:#fff}
+.iscale{font-size:1.1rem;background:rgba(255,255,255,.08);padding:18px 22px;border-radius:5px;margin-top:18px}
+.isrc{font-size:.82rem;color:#b9c0a6;font-style:italic;margin-top:18px}
+.isrc a{color:#dbe6c0}
+
+/* Contact */
+.contact-links{list-style:none;padding:0;margin:30px 0 0;display:flex;flex-direction:column;gap:14px}
+.contact-links a{display:inline-flex;align-items:center;gap:12px;color:var(--forest);font-weight:600}
+.contact-links svg{width:24px;height:24px;fill:var(--clay)}
+footer{background:var(--ink);color:#d7cfc1;text-align:center;padding:40px;font-size:.9rem}
+
+@media(max-width:860px){
+  .navlinks{display:none} .menu{display:block}
+  .two,.approach,.pair{grid-template-columns:1fr}
+  .stats,.flow,.steps,.wsteps,.tl,.istats,.gallery{grid-template-columns:1fr 1fr}
+  .stat{border-right:0;border-bottom:1px solid var(--line)}
+  .why ul{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .stats,.steps,.wsteps,.tl,.istats,.gallery{grid-template-columns:1fr}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Re<span>Weave</span></div>
+    <button class="menu" aria-label="Menu">☰</button>
+    <ul class="navlinks">
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#solution">Solution</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#prototype">Prototype</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#perspectives">Perspectives</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Circular agriculture · Algeria</p>
+    <h1>Waste drip tape, rewoven into climate resilience.</h1>
+    <p>ReWeave transforms end-of-life thin drip irrigation tapes into durable woven agricultural mats that conserve water, suppress weeds, and protect vulnerable soils.</p>
+    <div>
+      <a href="#solution" class="btn">Discover the innovation →</a>
+      <a href="#impact" class="btn ghost">See the impact</a>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap">
+    <p class="eyebrow">The problem</p>
+    <h2>A durable polymer, thrown away after one season</h2>
+    <div class="two" style="margin-top:34px">
+      <div>
+        <p class="lead">Modern agriculture relies heavily on drip irrigation. After their short operational life, thin drip tapes become agricultural waste despite being manufactured from durable polymers designed for the outdoors.</p>
+        <p>Their short life is not caused by the plastic wearing out, but by the tiny emitter openings clogging up. Each tape releases water through microscopic holes and narrow labyrinth channels that are easily blocked by fine soil particles and by mineral scale, mainly limestone (calcium carbonate) that precipitates out of the irrigation water. Once the emitters clog, the tape is pulled out and discarded rather than cleaned, even though the polymer itself is still strong.</p>
+      </div>
+      <div>
+        <p>ReWeave is based in Algeria, where thin drip tape underpins vegetable farming: tomatoes, watermelon, and peppers are all grown on it, and the tape is typically used for only one or two seasons before being discarded. No official figures track how much becomes waste, so we estimate the scale from national crop areas.</p>
+        <p class="src">On emitter clogging by soil particles and mineral scale, see <a href="https://blog.irritec.com/drip-irrigation-system-maintenance-how-to-prevent-clogging-and-loss-of-uniformity/" target="_blank" rel="noopener">Irritec</a> and <a href="https://www.cnpandora.com/news/prevent-drip-tape-clogging-spring-guide/" target="_blank" rel="noopener">CNPandora</a>.</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>~10 km</b><p>Of thin drip tape laid across a single hectare (rows about one metre apart)</p></div>
+      <div class="stat"><b>~80 kg</b><p>Of tape discarded per hectare each season, at roughly 8 grams per metre</p></div>
+      <div class="stat"><b>100,000+ ha</b><p>Of Algerian tomato, watermelon, and pepper on thin drip tape — thousands of tonnes of waste a year</p></div>
+    </div>
+    <p class="src">Algeria publishes no drip-tape waste figures, so this is our own estimate. Watermelon alone covers about 63,000 hectares; tomato (~1.6 million tonnes a year) and pepper areas are derived from national production, giving well over 100,000 hectares across the three crops. At roughly 10,000 m of tape per hectare and 8 g per metre, both measured in the field, these crops alone discard on the order of 7,000 to 9,000 tonnes a year. Sources: <a href="https://www.freshplaza.com/north-america/article/9702370/new-world-watermelon-production-record/" target="_blank" rel="noopener">FAOSTAT watermelon area</a>, <a href="https://en.wikipedia.org/wiki/List_of_countries_by_tomato_production" target="_blank" rel="noopener">FAOSTAT tomato production</a>; per-hectare tape length and weight are ReWeave's own measurements.</p>
+
+    <div class="gallery">
+      <figure><img src="images/tomatoes-irrgation-thin-drip-tapes.jpg" alt="Tomato field on thin drip tape"><figcaption>Tomatoes grown on thin drip tape.</figcaption></figure>
+      <figure><img src="images/peper_thin_drip_tapes_irrigation,.webp" alt="Pepper field on thin drip tape"><figcaption>Peppers grown on thin drip tape.</figcaption></figure>
+      <figure><img src="images/old-drip-tape.jpg" alt="Pile of discarded drip tape"><figcaption>End of life: tapes discarded as plastic waste.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="solution">
+  <div class="wrap">
+    <p class="eyebrow">Our solution</p>
+    <h2>Upcycling, not recycling</h2>
+    <p class="lead" style="margin-top:14px">Conventional recycling shreds end-of-life tapes and melts them into pellets. The process is energy-intensive and destroys the durable structure the material already has. ReWeave keeps that structure intact.</p>
+    <div class="approach">
+      <figure><img class="diagram" src="images/Drip-Irrigation-Tape-Recycling.jpg.webp" alt="Conventional recycling diagram"><figcaption><strong>Traditional recycling</strong><br>Drip tape → washing → scraps → pelletizing → new plastic pellets.</figcaption></figure>
+      <figure class="photo"><img src="images/prototype-2026.jpg" alt="A durable mat hand-woven from drip tape"><figcaption><strong>The ReWeave approach</strong><br>Instead of melting the tapes down, we <em>weave</em> them into durable mats, keeping the polymer intact and ready to use.</figcaption></figure>
+    </div>
+    <div class="flow">
+      <div class="c"><span>Input</span><h3>Waste material</h3><p>End-of-life thin drip irrigation tapes.</p></div>
+      <div class="c"><span>Process</span><h3>Upcycling</h3><p>Manual weaving and mechanical transformation, preserving the original polymer structure.</p></div>
+      <div class="c"><span>Output</span><h3>New applications</h3><p>Durable agricultural mats for water conservation, weed suppression, and erosion control.</p></div>
+    </div>
+    <div class="why">
+      <h3>Why it works</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span>No melting or chemical processing</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span>Keeps the original UV-resistant polymer intact</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span>Runnable with modest machinery near the farms</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span>Durable through years of outdoor use</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>From waste to a working product</h2>
+    <p class="lead" style="margin-top:14px">A simple, low-tech process that keeps the polymer intact at every step.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Collect</h3><p>Gather end-of-life tapes that would otherwise be discarded or burned.</p></div>
+      <div class="step"><div class="n">2</div><h3>Clean &amp; cut</h3><p>Clean and cut the tapes into uniform strips, ready to work by hand.</p></div>
+      <div class="step"><div class="n">3</div><h3>Weave</h3><p>Interlace the strips into a dense, durable mat with a plain one-over-one weave.</p></div>
+      <div class="step"><div class="n">4</div><h3>Deploy</h3><p>Lay the mats to shade soil, cut evaporation, suppress weeds, and resist erosion.</p></div>
+    </div>
+    <div class="weave">
+      <h3>Inside the weave</h3>
+      <p>The mat uses a plain one-over-one (1/1) weave, where each warp crosses a single weft at a time. This structure is chosen deliberately: it features the maximum number of interlacing crossover points, making the mat very stable, ravel-resistant, and less prone to snagging.</p>
+      <p>Drip tape is flat and flexible rather than stiff like wire, so the weft strips tend to slip out of position. To lock them in, we punch holes through the warp strips along each edge and thread the weft through them, anchoring every row while keeping the polymer fully intact.</p>
+      <div class="wsteps">
+        <figure><img src="images/step_1.jpg" alt="Step 1"><figcaption>1 · Warp laid out, first weft interlaced.</figcaption></figure>
+        <figure><img src="images/step_2.jpg" alt="Step 2"><figcaption>2 · Push the inserted weft into position.</figcaption></figure>
+        <figure><img src="images/step_3.jpg" alt="Step 3"><figcaption>3 · Tighten the weft to close the weave.</figcaption></figure>
+        <figure><img src="images/step_4.jpg" alt="Step 4"><figcaption>4 · Tuck the ends into the edge warps.</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prototype">
+  <div class="wrap">
+    <p class="eyebrow">Prototype journey</p>
+    <h2>Three years in the field</h2>
+    <div class="tl">
+      <div class="e"><div class="dot"></div><div class="yr">2023</div><h3>First prototypes</h3><p>Initial manual woven designs developed from discarded irrigation tapes.</p></div>
+      <div class="e"><div class="dot"></div><div class="yr">2024–25</div><h3>Outdoor validation</h3><p>Prototypes exposed to Mediterranean conditions, showing long-term structural stability.</p></div>
+      <div class="e"><div class="dot"></div><div class="yr">2026</div><h3>Future development</h3><p>Improving design, testing performance, and preparing for pilot deployment.</p></div>
+    </div>
+    <figure style="margin:0">
+      <div class="pair">
+        <div class="p"><img src="images/prototype-2023.jpg" alt="2023 prototype mat"><span class="tag">The 2023 prototype mat</span></div>
+        <div class="p"><img src="images/drip-type-application-result.jpg" alt="Protected soil beneath the mat"><span class="tag">The result beneath it</span></div>
+      </div>
+      <figcaption class="cap">A 2023 prototype mat after years of outdoor exposure, and the protected, weed-suppressed soil revealed where it was laid.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="applications">
+  <div class="wrap">
+    <p class="eyebrow">Applications</p>
+    <h2>One mat, three jobs at once</h2>
+    <p class="lead" style="margin-top:14px">Laid over the soil, a ReWeave mat shades the ground and acts as a physical barrier, cutting evaporation, blocking sunlight from weeds, and shielding the surface from wind and rain.</p>
+    <div class="cards">
+      <div class="card"><img src="images/drip_tapes_application_aroun_trees_for_weed_suppression.jpg" alt="Mat around a tree"><div class="body"><h3>Tree protection mats</h3><p>Reduce soil evaporation, limit weed growth, and improve soil protection around trees.</p></div></div>
+      <div class="card"><img src="images/irrosion_application.jpg" alt="Mat for erosion control"><div class="body"><h3>Erosion control</h3><p>A protective layer for vulnerable slopes and degraded landscapes.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="wrap">
+    <p class="eyebrow">Impact</p>
+    <h2>Every square metre counts</h2>
+    <div class="istats">
+      <div class="istat"><b>2.0 kg</b><p>CO₂ emissions avoided per square metre of mat</p></div>
+      <div class="istat"><b>640 g</b><p>Agricultural plastic diverted from disposal per square metre</p></div>
+      <div class="istat"><b>3+ yrs</b><p>Proven outdoor durability in prototype validation</p></div>
+    </div>
+    <div class="inote">
+      <p>A single square metre of ReWeave mat is woven from over <strong>80 metres</strong> of reclaimed drip tape. At roughly 8 grams per metre, that adds up to about <strong>640 grams</strong> of agricultural plastic rescued from disposal in every mat.</p>
+      <p>Drip tape is made from low-density polyethylene (LDPE), whose repeat unit is about 86% carbon. When burned, that carbon oxidises into CO₂, releasing about <strong>3.1 kg per kilogram</strong>. By upcycling the tape instead, each square metre prevents roughly <strong>2.0 kg of CO₂ emissions</strong>.</p>
+      <p class="iscale">At scale: every <strong>1,000 m²</strong> of deployed mats keeps around <strong>640 kg</strong> of plastic in use and prevents roughly <strong>2.0 tonnes of CO₂</strong> from entering the atmosphere.</p>
+      <p class="isrc">The tape weighs about 8 g/m and we weave over 80 m into each square metre, both measured from our own prototypes (outdoors since 2023). The CO₂ figure is specific to polyethylene (~86% carbon, ~3.1 kg CO₂/kg on complete combustion; see <a href="https://assets.wwf.org.au/image/upload/Blue_Environment_Carbon_emissions_of_Australian_plastics_Full_report?_a=ATO2Bfg0" target="_blank" rel="noopener">WWF Australia</a> and <a href="https://bioprocesstools.com/blog/emission-factors-bioprocessing/" target="_blank" rel="noopener">Bioprocess Tools</a>). Open burning is less complete, so we treat this as an upper estimate.</p>
+    </div>
+  </div>
+</section>
+
+<section id="perspectives">
+  <div class="wrap">
+    <p class="eyebrow">Perspectives</p>
+    <h2>What we are working toward</h2>
+    <p class="lead" style="margin-top:14px">ReWeave is still early, and our current prototypes are hand-woven. These directions turn the process into an affordable, scalable product.</p>
+    <div class="cards">
+      <div class="pcard"><h3>Automated weaving</h3><p>Machinery to automate the weave, cutting production time and cost so mats are affordable at field scale.</p></div>
+      <div class="pcard"><h3>Field collection machines</h3><p>Machines that gather used tape and wind it into rolls, so collection pays for itself.</p></div>
+      <div class="pcard"><h3>Wire-stitched edges</h3><p>Replace punched-hole edge-locking with wire-stitched edges, better suited to automation.</p></div>
+      <div class="pcard"><h3>Less material per mat</h3><p>A more material-efficient weave that slices the weft lengthwise, cutting tape used by about 25%.</p></div>
+      <div class="pcard"><h3>Farmer pilots</h3><p>Field pilots to quantify water savings, weed suppression, and yield effects.</p></div>
+      <div class="pcard"><h3>Erosion-control market</h3><p>A durable, locally made alternative to imported mats for slopes, embankments, and channels.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Let's build the circular field</h2>
+    <p class="lead" style="margin-top:14px">Interested in collaboration, research partnerships, or supporting sustainable agricultural innovation?</p>
+    <ul class="contact-links">
+      <li><a href="mailto:mohammedarab.122002@gmail.com"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm16 2.24-8 7-8-7V18h16V8.24z"/></svg><span>mohammedarab.122002@gmail.com</span></a></li>
+      <li><a href="https://www.linkedin.com/in/mohammed-arab12345/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V10.3H5.67v8.04h2.67zM7 9.12a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.22v-4.4c0-2.36-1.26-3.46-2.94-3.46a2.54 2.54 0 0 0-2.3 1.27v-1.09h-2.67v8.04h2.67v-4.25c0-1.12.21-2.2 1.6-2.2 1.37 0 1.39 1.28 1.39 2.27v4.18h2.65z"/></svg><span>Connect on LinkedIn</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>© <span id="y"></span> ReWeave Circular Agriculture · Terra direction</footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+document.querySelector('.menu').addEventListener('click',()=>{const n=document.querySelector('.navlinks');n.style.display=n.style.display==='flex'?'none':'flex';n.style.flexDirection='column';n.style.position='absolute';n.style.top='64px';n.style.right='20px';n.style.background='#fffdf9';n.style.padding='18px 24px';n.style.border='1px solid #e6ded0';n.style.borderRadius='4px';});
+</script>
+</body>
+</html>
